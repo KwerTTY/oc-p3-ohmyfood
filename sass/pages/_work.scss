@@ -1,0 +1,16 @@
+.logo__img {
+    max-width: 250px;
+}
+.restaurant__card__item__img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.searchbar {
+    display: none !important;
+}
+.restmenu__part__item {
+    display: flex;
+    gap: 1em;
+}
