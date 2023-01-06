@@ -3,7 +3,8 @@
 }
 
 @mixin btn {
-    padding: 1em 1.5em;
+    min-width: 170px;
+    padding: 1.1em 1.5em;
     border-radius: 25px;
     border: none;
     color: $colour-white;

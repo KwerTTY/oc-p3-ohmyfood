@@ -75,13 +75,32 @@ h4 {
   font-size: 1.2em;
 }
 
+.header i {
+  font-size: 1.3em;
+}
+
+.footer i {
+  font-size: 0.8em;
+}
+
+.infobox__subtitle {
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
 a {
   text-decoration: none;
   color: #000;
 }
 
 .btn {
-  padding: 1em 1.5em;
+  min-width: 170px;
+  padding: 1.1em 1.5em;
   border-radius: 25px;
   border: none;
   color: #fff;
@@ -104,6 +123,7 @@ a {
 }
 
 .header {
+  padding: 0.8em 1.2em 0.5em 1.2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,7 +132,6 @@ a {
 .header__return {
   position: absolute;
   align-self: flex-start;
-  padding-left: 1em;
 }
 
 .footer {
@@ -139,6 +158,8 @@ a {
 }
 
 .location {
+  background-color: #e6e6e6;
+  padding: 1em 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,11 +168,36 @@ a {
   display: none !important;
 }
 .location__active {
-  color: #666666;
+  color: #333333;
   padding-right: 1em;
 }
 .location__active__icon {
   padding-right: 0.8em;
+}
+
+.infobox {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+  padding: 2.5em 0 3.5em 0;
+}
+.infobox__title {
+  padding: 0 2.8em;
+}
+.infobox__subtitle {
+  color: #666666;
+  padding: 0 2em 1em 2em;
+}
+
+.howto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 3em 1em;
 }
 
 .restaurant {

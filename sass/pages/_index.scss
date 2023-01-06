@@ -1,4 +1,6 @@
 .location {
+    background-color: soft-lightdark($colour-grey);
+    padding: 1em 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,12 +8,37 @@
         display: none !important;
     }
     &__active {
-        color: hard-lightdark($colour-black);
+        color: mid-lightdark($colour-black);
         padding-right: 1em;
         &__icon {
             padding-right: 0.8em;
         }
     }
+}
+
+.infobox {
+    background-color: soft-lightdark($colour-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    padding: 2.5em 0 3.5em 0;
+    &__title {
+        padding: 0 2.8em;
+    }
+    &__subtitle {
+        color: hard-lightdark($colour-black);
+        padding: 0 2em 1em 2em;
+    }
+}
+
+.howto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 3em 1em;
 }
 
 .restaurant {
