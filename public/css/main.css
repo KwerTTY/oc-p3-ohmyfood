@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-ul {
+ul, li {
   list-style: none;
 }
 
@@ -46,6 +46,7 @@ td, th {
 
 body {
   width: 100%;
+  max-width: 375px;
   margin: 0 auto;
 }
 
@@ -55,20 +56,23 @@ body {
 
 h1 {
   font-family: "Shrikhand", cursive;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 2em;
 }
 
 h2 {
-  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
 }
 
 h3 {
-  font-family: "Shrikhand", cursive;
+  font-weight: 700;
+  font-size: 1.2em;
 }
 
 h4 {
   font-family: "Shrikhand", cursive;
+  font-size: 1.2em;
 }
 
 a {
@@ -77,20 +81,17 @@ a {
 }
 
 .btn {
-  padding: 0.75rem;
+  padding: 1em 1.5em;
   border-radius: 25px;
   border: none;
   color: #fff;
   background: #9356DC;
   background: linear-gradient(180deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
   cursor: pointer;
+  filter: drop-shadow(0 0 0.6em #999999);
 }
 .btn:hover {
-  background: #9356DC;
-}
-.btn--full-width {
-  width: 100%;
-  margin: 0 auto;
+  filter: drop-shadow(0 0 0.6em #9356DC);
 }
 
 .noselect {
@@ -104,11 +105,37 @@ a {
 
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .header__return {
-  display: none !important;
+  position: absolute;
+  align-self: flex-start;
+  padding-left: 1em;
+}
+
+.footer {
+  padding: 1.5em 1.5em 2em 1.5em;
+  background-color: #333333;
+  color: #fff;
+}
+.footer__title {
+  padding-bottom: 1em;
+}
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.footer__list__item a {
+  color: #fff;
+}
+.footer__list__item a:hover {
+  color: #99E2D0;
+}
+.footer__list__item i {
+  width: 1.8em;
 }
 
 .location {
@@ -121,16 +148,17 @@ a {
 }
 .location__active {
   color: #666666;
+  padding-right: 1em;
 }
 .location__active__icon {
-  padding-right: 15px;
+  padding-right: 0.8em;
 }
 
 .restaurant {
   background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.3em;
   padding: 3em 1em;
 }
 .restaurant__card {
@@ -138,6 +166,10 @@ a {
   flex-direction: column;
   border-radius: 1em;
   background-color: #fff;
+  filter: drop-shadow(0 0 0.6em #999999);
+}
+.restaurant__card:hover {
+  filter: drop-shadow(0 0 0.6em #9356DC);
 }
 .restaurant__card__new {
   background-color: #99E2D0;
@@ -167,6 +199,16 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.3em;
+}
+.restaurant__card__footer__text__location {
+  color: #666666;
+}
+.restaurant__card__footer__like {
+  font-size: 1.5em;
+  color: #999999;
+}
+.restaurant__card__footer__like:hover {
+  color: #9356DC;
 }
 
 .restmenu__part__item {

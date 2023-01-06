@@ -6,20 +6,18 @@ body {
 
 h1 {
     font-family: 'Shrikhand', cursive;
-    font-weight: 800;
+    font-weight: 500;
     font-size: 2em;
 }
 h2 {
-    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
 }
 h3 {
-    font-family: 'Shrikhand', cursive;
+    font-weight: 700;
+    font-size: 1.2em;
 }
-h4 {
+h4 { //footer
     font-family: 'Shrikhand', cursive;
+    font-size: 1.2em;
 }
-
-a {
-    text-decoration: none;
-    color: $colour-black;
-  }

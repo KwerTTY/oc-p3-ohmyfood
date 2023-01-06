@@ -1,0 +1,22 @@
+.footer {
+    padding: 1.5em 1.5em 2em 1.5em;
+    background-color: mid-lightdark($colour-black);
+    color: $colour-white;
+    &__title {
+        padding-bottom: 1em;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        &__item a {
+            color: $colour-white;
+            &:hover {
+                color: $colour-accent;
+            }
+        }
+        &__item i {
+            width: 1.8em;
+        }
+    }
+}

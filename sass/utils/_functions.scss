@@ -5,6 +5,13 @@
         @return darken($colour, 5%);
     }
 }
+@function mid-lightdark($colour) {
+    @if (lightness($colour) < 25%){
+        @return lighten($colour, 20%);
+    }@else{
+        @return darken($colour, 20%);
+    }
+}
 @function hard-lightdark($colour) {
     @if (lightness($colour) < 25%){
         @return lighten($colour, 40%);

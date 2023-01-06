@@ -1,8 +1,12 @@
 .header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    // @include shadow($colour-black);
     &__return {
-        display: none !important;
+        position: absolute;
+        align-self: flex-start;
+        padding-left: 1em;
     }
 }
