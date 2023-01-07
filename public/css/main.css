@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-ul, li {
+ul {
   list-style: none;
 }
 
@@ -46,6 +46,7 @@ td, th {
 
 body {
   width: 100%;
+  min-width: 320px;
   max-width: 375px;
   margin: 0 auto;
 }
@@ -89,8 +90,20 @@ h4 {
 }
 
 .btn {
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+.restaurant__card__new {
   font-size: 0.9em;
+}
+
+.howto__wrapper__item__number {
+  font-size: 0.9em;
+}
+
+.howto__wrapper__item__text {
+  font-weight: 500;
 }
 
 a {
@@ -100,14 +113,13 @@ a {
 
 .btn {
   min-width: 170px;
-  padding: 1.1em 1.5em;
+  padding: 1em 1.5em;
   border-radius: 25px;
   border: none;
   color: #fff;
-  background: #9356DC;
   background: linear-gradient(180deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
   cursor: pointer;
-  filter: drop-shadow(0 0 0.6em #999999);
+  filter: drop-shadow(0 0 0.6em #cccccc);
 }
 .btn:hover {
   filter: drop-shadow(0 0 0.6em #9356DC);
@@ -123,11 +135,13 @@ a {
 }
 
 .header {
+  position: relative;
   padding: 0.8em 1.2em 0.5em 1.2em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.25);
 }
 .header__return {
   position: absolute;
@@ -197,7 +211,46 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
-  padding: 3em 1em;
+  padding: 3em 1em 4em 1em;
+}
+.howto__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.2em;
+}
+.howto__wrapper__item {
+  display: flex;
+  gap: 1.2em;
+  align-items: center;
+  justify-self: flex-end;
+  width: 95%;
+  border-radius: 1em;
+  padding: 1.5em 2em;
+  background-color: #fff;
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.6em #cccccc);
+}
+.howto__wrapper__item__number {
+  position: absolute;
+  left: -0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  color: #fff;
+  background-color: #9356DC;
+}
+.howto__wrapper__item i {
+  color: #999999;
+}
+.howto__wrapper__item:hover {
+  background-color: #f2eafb;
+}
+.howto__wrapper__item:hover i {
+  color: #9356DC;
 }
 
 .restaurant {
@@ -205,14 +258,14 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1.3em;
-  padding: 3em 1em;
+  padding: 3em 1em 4em 1em;
 }
 .restaurant__card {
   display: flex;
   flex-direction: column;
   border-radius: 1em;
   background-color: #fff;
-  filter: drop-shadow(0 0 0.6em #999999);
+  filter: drop-shadow(0 0 0.6em #cccccc);
 }
 .restaurant__card:hover {
   filter: drop-shadow(0 0 0.6em #9356DC);
@@ -222,13 +275,13 @@ a {
   color: #278870;
   position: absolute;
   align-self: flex-end;
-  padding: 0.5em;
+  padding: 0.4em 0.8em;
   margin: 0.8em 0.8em 0 0;
   border-radius: 0.2em;
 }
 .restaurant__card__img {
   width: 100%;
-  height: 150px;
+  height: 175px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 50% 60%;

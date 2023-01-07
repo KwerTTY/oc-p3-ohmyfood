@@ -1,14 +1,13 @@
-@mixin shadow($colour:hard-lightdark($colour-white),$size:0.6em){
+@mixin shadow($colour:mid-lightdark($colour-white),$size:0.6em){
     filter: drop-shadow(0 0 $size $colour);
 }
 
 @mixin btn {
     min-width: 170px;
-    padding: 1.1em 1.5em;
+    padding: 1em 1.5em;
     border-radius: 25px;
     border: none;
     color: $colour-white;
-    background: $colour-primary;
     background: $btn-gradient;
     cursor: pointer;
     @include shadow;
