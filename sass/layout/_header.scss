@@ -1,6 +1,15 @@
 .header {
     position: relative;
     z-index: 30;
+
+    // position: fixed;
+    // z-index: 30;
+    // background-color: $colour-white;
+    // width: 100%;
+    // right: 0px;
+    // top: auto;
+    // left: auto;
+
     padding: 0.8em 1.2em 0.5em 1.2em;
     display: flex;
     align-items: center;
@@ -8,7 +17,6 @@
     box-shadow: 0 0.4em 0.4em -0.4em rgba(0, 0, 0, 0.25);
     &__return {
         position: absolute;
-        // align-self: flex-start;
         left: 1em;
     }
 }
