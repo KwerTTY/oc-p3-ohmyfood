@@ -76,6 +76,16 @@ h4 {
   font-size: 1.2em;
 }
 
+h5 {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.6em;
+}
+
+h6 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
 .header i {
   font-size: 1.3em;
 }
@@ -106,6 +116,27 @@ h4 {
   font-weight: 500;
 }
 
+.like {
+  font-size: 1.5em;
+}
+
+.fa-circle-check {
+  font-size: 1.3em;
+}
+
+.restmenu__container__part__item__text__title {
+  font-weight: 500;
+  font-size: 1.07em;
+}
+.restmenu__container__part__item__text__note {
+  font-weight: 300;
+  font-size: 0.9em;
+}
+.restmenu__container__part__item__price {
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -134,19 +165,43 @@ a {
  supported by Chrome, Edge, Opera and Firefox */
 }
 
+.like {
+  color: #999999;
+  cursor: pointer;
+}
+.like:hover {
+  color: #9356DC;
+}
+
+.img__lapalettedugout {
+  background-image: url("../img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-position: center top;
+}
+.img__lanoteenchantee {
+  background-image: url("../img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  background-position: center -11em;
+}
+.img__alafrancaise {
+  background-image: url("../img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-position: center top;
+}
+.img__ledelicedessens {
+  background-image: url("../img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  background-position: center top;
+}
+
 .header {
   position: relative;
   z-index: 30;
   padding: 0.8em 1.2em 0.5em 1.2em;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0.4em 0.4em -0.4em rgba(0, 0, 0, 0.25);
 }
 .header__return {
   position: absolute;
-  align-self: flex-start;
+  left: 1em;
 }
 
 .footer {
@@ -303,15 +358,89 @@ a {
 .restaurant__card__footer__text__location {
   color: #666666;
 }
-.restaurant__card__footer__like {
-  font-size: 1.5em;
-  color: #999999;
-}
-.restaurant__card__footer__like:hover {
-  color: #9356DC;
-}
 
-.restmenu__part__item {
+.restmenu {
+  background-size: 110% auto;
+  background-repeat: no-repeat;
+  padding-top: 14em;
+}
+.restmenu__container {
+  background-color: #f2f2f2;
+  padding: 2em 1em 0 1em;
+  border-radius: 2em 2em 0 0;
+}
+.restmenu__container__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1em;
+}
+.restmenu__container__part {
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.restmenu__container__part__title {
+  position: relative;
+  padding-bottom: 0.5em;
+}
+.restmenu__container__part__title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 2.5em;
+  border-bottom: 3px solid #99E2D0;
+}
+.restmenu__container__part__item {
   display: flex;
   gap: 1em;
+  align-items: stretch;
+  border-radius: 1em;
+  background-color: #fff;
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.6em #cccccc);
+}
+.restmenu__container__part__item:hover {
+  filter: drop-shadow(0 0 0.6em #99E2D0);
+}
+.restmenu__container__part__item__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-grow: 1;
+  padding: 0.7em 0 0.7em 0.7em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.restmenu__container__part__item__text__title, .restmenu__container__part__item__text__note {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.restmenu__container__part__item__price {
+  padding: 0.7em 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.restmenu__container__part__item__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 1em 1em 0;
+  min-width: 3.5em;
+  color: #fff;
+  background-color: #99E2D0;
+}
+.restmenu__container__cartlink {
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
 }

@@ -1,4 +1,84 @@
-.restmenu__part__item {
-    display: flex;
-    gap: 1em;
+.restmenu {
+    background-size: 110% auto;
+    background-repeat: no-repeat;
+    padding-top: 14em;
+    &__container {
+        background-color: soft-lightdark($colour-white);
+        padding: 2em 1em 0 1em;
+        border-radius: 2em 2em 0 0;
+        &__title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 1em;
+        }
+        &__part {
+            padding-top: 2em;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            &__title {
+                position: relative;
+                padding-bottom: 0.5em;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    height: 3px;
+                    width: 2.5em;
+                    border-bottom: 3px solid $colour-accent;
+                }
+            }
+            &__item {
+                display: flex;
+                gap: 1em;
+                align-items: stretch;
+                border-radius: 1em;
+                background-color: $colour-white;
+                cursor: pointer;
+                @include shadow;
+                &:hover{
+                @include shadow($colour-accent);
+                }
+                &__text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2em;
+                    width: fit-content;
+                    flex-grow: 1;
+                    padding: 0.7em 0 0.7em 0.7em;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    &__title, &__note {
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+                &__price {
+                    padding: 0.7em 0;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                }
+                &__check {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 0 1em 1em 0;
+                    min-width: 3.5em;
+                    color: $colour-white;
+                    background-color: $colour-accent;
+                }
+            }
+        }
+        &__cartlink {
+            padding: 2em 0;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
 }

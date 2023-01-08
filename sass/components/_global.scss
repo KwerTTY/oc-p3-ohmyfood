@@ -2,11 +2,12 @@ a {
     text-decoration: none;
     color: $colour-black;
 }
-
 .btn {
     @include btn
 }
-
 .noselect {
     @include noselect
+}
+.like {
+    @include like
 }

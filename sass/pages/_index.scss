@@ -124,16 +124,6 @@
                     color: hard-lightdark($colour-black);
                 }
             }
-            &__like {
-                font-size: 1.5em;
-                color: hard-lightdark($colour-white);
-                &:hover {
-                    color: $colour-primary;
-                    // Gradient à faire avec webkit
-                    // voir pour faire passer un fa-solid via display:none
-                }
-            }
-            
         }
     }
 }

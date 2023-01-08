@@ -25,3 +25,13 @@
                 user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
 }
+
+@mixin like {
+    color: hard-lightdark($colour-white);
+    cursor: pointer;
+    &:hover {
+        color: $colour-primary;
+        // Gradient à faire avec webkit
+        // voir pour faire passer un fa-solid via display:none
+    }
+}

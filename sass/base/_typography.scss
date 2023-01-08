@@ -21,6 +21,14 @@ h4 { //footer
     font-family: 'Shrikhand', cursive;
     font-size: 1.2em;
 }
+h5 {
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.6em;
+}
+h6 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
 
 .header i {
     font-size: 1.3em;
@@ -44,4 +52,25 @@ h4 { //footer
 }
 .howto__wrapper__item__text {
     font-weight: 500;
+}
+.like {
+    font-size: 1.5em;
+}
+.fa-circle-check {
+    font-size: 1.3em;
+}
+
+.restmenu__container__part__item {
+    &__text__title {
+        font-weight: 500;
+        font-size: 1.07em;
+    }
+    &__text__note {
+        font-weight: 300;
+        font-size: 0.9em;
+    }
+    &__price {
+        font-weight: 500;
+        font-size: 0.9em;
+    }
 }
