@@ -5,12 +5,17 @@
 @mixin btn {
     min-width: 170px;
     padding: 1em 1.5em;
-    border-radius: 25px;
+    border-radius: 1.5em;
     border: none;
     color: $colour-white;
     background: $btn-gradient;
     cursor: pointer;
     @include shadow;
+    &--icon {
+        padding: 0.6em;
+        border-radius: 100%;
+        min-width: 0;
+    }
     &:hover{
         @include shadow(hard-lightdark($colour-white));
         background: $btn-gradient-lighten;
@@ -37,8 +42,14 @@
     }
 }
 
-@mixin responsive($screensize) {
-    @media screen and (min-width: map-get($breakpoints, $screensize)){
+@mixin responsive-tablet {
+    @media screen   and (min-width: map-get($breakpoints, tablet))
+                    and (max-width: map-get($breakpoints, tablet-max)){
+        @content;
+    }
+}
+@mixin responsive-desktop {
+    @media screen and (min-width: map-get($breakpoints, desktop)){
         @content;
     }
 }

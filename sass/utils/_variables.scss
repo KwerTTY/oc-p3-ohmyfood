@@ -8,7 +8,8 @@ $colour-invalid: #DB464B;
 
 $breakpoints: (
     tablet: 600px,
-    desktop: 950px
+    tablet-max: 999px,
+    desktop: 1000px
 );
 
 $btn-gradient: linear-gradient(180deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);

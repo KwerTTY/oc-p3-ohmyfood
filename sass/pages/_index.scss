@@ -4,15 +4,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    &__searchbar {
-        display: none !important;
+    cursor: pointer;
+
+    @include responsive-desktop {
+        display: none;
     }
+    
     &__active {
         color: mid-lightdark($colour-black);
         padding-right: 1em;
         &__icon {
             padding-right: 0.8em;
         }
+    }
+}
+
+.infobox-howto {
+    @include responsive-tablet {
+        display: flex;
     }
 }
 
@@ -31,6 +40,9 @@
     &__subtitle {
         color: hard-lightdark($colour-black);
         padding: 0 2em 1em 2em;
+    }
+    @include responsive-tablet {
+        background-color: $colour-white;
     }
 }
 
@@ -80,52 +92,77 @@
             }
         }
     }
+    @include responsive-tablet {
+        min-width: 20em;
+        width: 50%;
+    }
+    @include responsive-desktop {
+        &__wrapper {
+            flex-flow: row nowrap;
+            margin-left: 0;
+            &__item {
+                width: 33%;
+                margin-left: 0.6em;
+            }
+        }
+    }
 }
 
 .restaurant {
     background-color: soft-lightdark($colour-white);
-    display: flex;
-    flex-direction: column;
-    gap: 1.3em;
-    padding: 3em 1em 4em 1em;
-    &__card {
+    &__title {
+        padding: 2em 1em 1em 1em;
+    }
+    &__container {
         display: flex;
         flex-direction: column;
-        border-radius: 1em;
-        background-color: $colour-white;
-        @include shadow;
-        &:hover{
-        @include shadow($colour-primary);
-        }
-        &__new {
-            background-color: $colour-accent;
-            color: hard-lightdark($colour-accent);
-            position: absolute;
-            align-self: flex-end;
-            padding: 0.4em 0.8em;
-            margin: 0.8em 0.8em 0 0;
-            border-radius: 0.2em;
-        }
-        &__img {
-            width: 100%;
-            height: 175px;
-            object-fit: cover;
-            object-position: 50% 60%;
-            border-radius: 1em 1em 0 0;
-        }
-        &__footer {
+        gap: 1.3em;
+        padding: 0 1em 4em 1em;
+        &__card {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1em;
-            &__text {
+            flex-direction: column;
+            border-radius: 1em;
+            background-color: $colour-white;
+            @include shadow;
+            &:hover{
+                @include shadow($colour-primary);
+            }
+            @include responsive-desktop {
+                flex: 1 0 34%;
+            }
+            &__new {
+                background-color: $colour-accent;
+                color: hard-lightdark($colour-accent);
+                position: absolute;
+                align-self: flex-end;
+                padding: 0.4em 0.8em;
+                margin: 0.8em 0.8em 0 0;
+                border-radius: 0.2em;
+            }
+            &__img {
+                width: 100%;
+                height: 175px;
+                object-fit: cover;
+                object-position: 50% 60%;
+                border-radius: 1em 1em 0 0;
+            }
+            &__footer {
                 display: flex;
-                flex-direction: column;
-                gap: 0.3em;
-                &__location {
-                    color: hard-lightdark($colour-black);
+                align-items: center;
+                justify-content: space-between;
+                padding: 1em;
+                &__text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3em;
+                    &__location {
+                        color: hard-lightdark($colour-black);
+                    }
                 }
             }
+        }
+        @include responsive-desktop {
+            flex-flow: row wrap;
         }
     }
 }
