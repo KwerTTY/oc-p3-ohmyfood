@@ -7,11 +7,12 @@
         <link rel="stylesheet" href="public/css/main.css">
         <script src="https://kit.fontawesome.com/cb548c6cad.js" crossorigin="anonymous"></script>
         <title>Ohmyfood!</title>
+        <link rel="icon" type="image/x-icon" href="public/img/favicon.ico">
         <meta name="description" content="Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d'attente dans les restaurants car leur menu est préparé à l'avance. Plus de perte de temps à conslistter la carte !">
     </head>
 
     <body>
-
+        
         <header class="header">
 
             <h1 class="header__logo noselect">ohmyfood</h1>
@@ -20,12 +21,14 @@
 
         <main>
 
+            <div class="loading-ring"></div>
+
             <div class="location">
 
                 <!-- Searchbar is hidden when you are on mobile -->
                 <form action="search.html" class="location__searchbar" method="get">
-                    <input type="text" class="searchbar__input" name="search" placeholder="Lille, Gare Lille Europe" required>
-                    <button class="btn searchbar__button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" class="location__searchbar__input" name="search" placeholder="Paris, Belleville" required>
+                    <button class="btn location__searchbar__button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
     
                 <div class="location__active"><i class="fa-solid fa-location-dot location__active__icon"></i>Paris, Belleville</div>

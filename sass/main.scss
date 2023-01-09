@@ -8,8 +8,10 @@
 @import "./base/typography";
 
 @import "./components/global";
+@import "./components/loading";
 
 @import "./layout/header";
+@import "./layout/main";
 @import "./layout/footer";
 
 @import "./pages/index";

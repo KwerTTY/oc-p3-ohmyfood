@@ -44,12 +44,13 @@
         flex-direction: column;
         align-items: flex-end;
         gap: 1.2em;
+        margin-left: 0.6em;
         &__item {
             display: flex;
             gap: 1.2em;
             align-items: center;
             justify-self: flex-end;
-            width: 95%;
+            width: 100%;
             border-radius: 1em;
             padding: 1.5em 2em;
             background-color: $colour-white;
@@ -72,6 +73,7 @@
             }
             &:hover {
                 background-color: lighten($colour-primary, 35%);
+                @include shadow(hard-lightdark($colour-white));
                 & i {
                     color: $colour-primary;
                 }

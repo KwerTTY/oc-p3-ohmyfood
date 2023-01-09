@@ -1,15 +1,13 @@
-.header {
-    position: relative;
+header {
+    position: fixed;
+    top: 0;
+    height: 4.25em;
+    width: 100%;
     z-index: 30;
+}
 
-    // position: fixed;
-    // z-index: 30;
-    // background-color: $colour-white;
-    // width: 100%;
-    // right: 0px;
-    // top: auto;
-    // left: auto;
-
+.header {
+    background-color: $colour-white;
     padding: 0.8em 1.2em 0.5em 1.2em;
     display: flex;
     align-items: center;

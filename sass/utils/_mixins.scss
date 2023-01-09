@@ -12,7 +12,8 @@
     cursor: pointer;
     @include shadow;
     &:hover{
-        @include shadow($colour-primary);
+        @include shadow(hard-lightdark($colour-white));
+        background: $btn-gradient-lighten;
     }
 }
 
@@ -33,5 +34,11 @@
         color: $colour-primary;
         // Gradient à faire avec webkit
         // voir pour faire passer un fa-solid via display:none
+    }
+}
+
+@mixin responsive($screensize) {
+    @media screen and (min-width: map-get($breakpoints, $screensize)){
+        @content;
     }
 }
