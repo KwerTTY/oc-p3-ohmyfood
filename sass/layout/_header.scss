@@ -24,6 +24,7 @@ header {
 
         @include responsive-desktop {
             display: flex;
+            height: 60%;
             gap: 1em;
         }
 
@@ -31,13 +32,20 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            color: mid-lightdark($colour-black);
+            height: 100%;
+            color: hard-lightdark($colour-black);
         }
         &__input {
             width: 20em;
             border: none;
             border-bottom: 1px solid mid-lightdark($colour-white);
             padding: 0 1em;
+            border-radius: 0.5em 0.5em 0 0;
+            &:focus {
+                border-bottom: 1px solid $colour-primary;
+                background-color: lighten($colour-primary, 35%);
+                outline: none;
+            }
         }
     }
     &__return {

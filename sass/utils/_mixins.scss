@@ -14,7 +14,8 @@
     &--icon {
         padding: 0.6em;
         border-radius: 100%;
-        min-width: 0;
+        min-width: 2.5em;
+        height: 2.5em;
     }
     &:hover{
         @include shadow(hard-lightdark($colour-white));
