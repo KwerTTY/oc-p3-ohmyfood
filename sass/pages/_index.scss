@@ -41,68 +41,74 @@
         color: hard-lightdark($colour-black);
         padding: 0 2em 1em 2em;
     }
+
     @include responsive-tablet {
         background-color: $colour-white;
+        flex: 1 0 34%;
+        border-right: 3px solid soft-lightdark($colour-white);
     }
+
 }
 
 .howto {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    padding: 3em 1em 4em 1em;
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 1.2em;
-        margin-left: 0.6em;
-        &__item {
-            display: flex;
-            gap: 1.2em;
-            align-items: center;
-            justify-self: flex-end;
-            width: 100%;
-            border-radius: 1em;
-            padding: 1.5em 2em;
-            background-color: $colour-white;
-            cursor: pointer;
-            @include shadow;
-            &__number {
-                position: absolute;
-                left: -0.8em;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-width: 24px;
-                height: 24px;
-                border-radius: 100%;
-                color: $colour-white;
-                background-color: $colour-primary;
-            }
-            & i {
-                color: hard-lightdark($colour-white);
-            }
-            &:hover {
-                background-color: lighten($colour-primary, 35%);
-                @include shadow(hard-lightdark($colour-white));
-                & i {
-                    color: $colour-primary;
-                }
-            }
+    &__container {
+        @include container-base;
+
+        @include responsive-desktop {
+            @include container-max-width
         }
-    }
-    @include responsive-tablet {
-        min-width: 20em;
-        width: 50%;
-    }
-    @include responsive-desktop {
-        &__wrapper {
-            flex-flow: row nowrap;
-            margin-left: 0;
+
+        &__cards {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1.2em;
+            margin-left: 0.6em;
+
+            @include responsive-desktop {
+                flex-flow: row nowrap;
+                margin-left: 0;
+            }
+
             &__item {
-                width: 33%;
-                margin-left: 0.6em;
+                display: flex;
+                gap: 1.2em;
+                align-items: center;
+                justify-self: flex-end;
+                width: 100%;
+                border-radius: 1em;
+                padding: 1.5em 2em;
+                background-color: $colour-white;
+                cursor: pointer;
+                @include shadow;
+
+                @include responsive-desktop {
+                    width: 33%;
+                    margin-left: 0.6em;
+                }
+
+                &__number {
+                    position: absolute;
+                    left: -0.8em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 24px;
+                    height: 24px;
+                    border-radius: 100%;
+                    color: $colour-white;
+                    background-color: $colour-primary;
+                }
+                & i {
+                    color: hard-lightdark($colour-white);
+                }
+                &:hover {
+                    background-color: lighten($colour-primary, 35%);
+                    @include shadow(hard-lightdark($colour-white));
+                    & i {
+                        color: $colour-primary;
+                    }
+                }
             }
         }
     }
@@ -110,59 +116,67 @@
 
 .restaurant {
     background-color: soft-lightdark($colour-white);
-    &__title {
-        padding: 2em 1em 1em 1em;
-    }
     &__container {
-        display: flex;
-        flex-direction: column;
-        gap: 1.3em;
-        padding: 0 1em 4em 1em;
-        &__card {
+        @include container-base;
+        
+        @include responsive-desktop {
+            @include container-max-width
+        }
+        
+        &__cards {
             display: flex;
             flex-direction: column;
-            border-radius: 1em;
-            background-color: $colour-white;
-            @include shadow;
-            &:hover{
-                @include shadow($colour-primary);
-            }
+            gap: 1.5em;
+
             @include responsive-desktop {
-                flex: 1 0 34%;
+                flex-flow: row wrap;
             }
-            &__new {
-                background-color: $colour-accent;
-                color: hard-lightdark($colour-accent);
-                position: absolute;
-                align-self: flex-end;
-                padding: 0.4em 0.8em;
-                margin: 0.8em 0.8em 0 0;
-                border-radius: 0.2em;
-            }
-            &__img {
-                width: 100%;
-                height: 175px;
-                object-fit: cover;
-                object-position: 50% 60%;
-                border-radius: 1em 1em 0 0;
-            }
-            &__footer {
+
+            &__item {
                 display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 1em;
-                &__text {
+                flex-direction: column;
+                border-radius: 1em;
+                background-color: $colour-white;
+                @include shadow;
+                &:hover{
+                    @include shadow($colour-primary);
+                }
+
+                @include responsive-desktop {
+                    flex: 1 0 34%;
+                }
+
+                &__new {
+                    background-color: $colour-accent;
+                    color: hard-lightdark($colour-accent);
+                    position: absolute;
+                    align-self: flex-end;
+                    padding: 0.4em 0.8em;
+                    margin: 0.8em 0.8em 0 0;
+                    border-radius: 0.2em;
+                }
+                &__img {
+                    width: 100%;
+                    height: 175px;
+                    object-fit: cover;
+                    object-position: 50% 60%;
+                    border-radius: 1em 1em 0 0;
+                }
+                &__footer {
                     display: flex;
-                    flex-direction: column;
-                    gap: 0.3em;
-                    &__location {
-                        color: hard-lightdark($colour-black);
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1em;
+                    &__text {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.3em;
+                        &__location {
+                            color: hard-lightdark($colour-black);
+                        }
                     }
                 }
             }
-        }
-        @include responsive-desktop {
-            flex-flow: row wrap;
         }
     }
 }

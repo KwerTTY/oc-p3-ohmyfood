@@ -1,86 +1,112 @@
+.restimg {
+    height: 20em;
+    width: 100%;
+    object-fit: cover;
+}
+
 .restmenu {
-    &__img {
-        height: 20em;
-        width: 100%;
-        object-fit: cover;
-    }
+    position: relative;
+    padding: 2em 1em 0 1em;
+    margin-top: -4em;
+    background-color: soft-lightdark($colour-white);
+    border-radius: 2em 2em 0 0;
     &__container {
-        position: relative;
-        background-color: soft-lightdark($colour-white);
-        padding: 2em 1em 0 1em;
-        margin-top: -4em;
-        border-radius: 2em 2em 0 0;
+
+        @include responsive-desktop {
+            @include container-max-width;
+        }
+
         &__title {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding-right: 1em;
-        }
-        &__part-title {
-            position: relative;
-            padding: 2em 0 0.5em 0;
-            &:after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 3px;
-                width: 2.5em;
-                border-bottom: 3px solid $colour-accent;
+
+            @include responsive-tablet {
+                justify-content: left;
+                padding: 0;
+                gap: 1em;
             }
-        }
-        &__part {
-            padding-top: 1em;
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
             @include responsive-desktop {
-                flex-flow: row wrap;
+                justify-content: left;
+                padding: 0;
+                gap: 1em;
             }
-            &__item {
+
+        }
+        &__menu {
+
+            @include responsive-desktop {
                 display: flex;
                 gap: 1em;
-                align-items: stretch;
-                border-radius: 1em;
-                background-color: $colour-white;
-                cursor: pointer;
-                @include shadow;
-                &:hover{
-                    @include shadow($colour-accent);
-                }
+            }
+
+            &__part {
+                padding-top: 1em;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                min-width: 0;
+
                 @include responsive-desktop {
-                    width: 25em;
+                    flex: 1 0 26%;
                 }
-                &__text {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.2em;
-                    width: fit-content;
-                    flex-grow: 1;
-                    padding: 0.7em 0 0.7em 0.7em;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    &__title, &__note {
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
+
+                &__title {
+                    position: relative;
+                    padding: 2em 0 0.5em 0;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        height: 3px;
+                        width: 2.5em;
+                        border-bottom: 3px solid $colour-accent;
                     }
                 }
-                &__price {
-                    padding: 0.7em 0;
+                .card {
                     display: flex;
-                    align-items: flex-end;
-                    justify-content: flex-end;
-                }
-                &__check {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 0 1em 1em 0;
-                    min-width: 3.5em;
-                    color: $colour-white;
-                    background-color: $colour-accent;
+                    align-items: stretch;
+                    border-radius: 1em;
+                    background-color: $colour-white;
+                    cursor: pointer;
+                    @include shadow;
+                    &:hover {
+                        @include shadow($colour-accent);
+                        .card__check {
+                            display: flex;
+                        }
+                    }
+                    &__container {
+                        display: flex;
+                        padding: 0.7em;
+                        gap: 1em;
+                        flex: 1;
+                        min-width: 0;
+                        &__text {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.2em;
+                            flex: 1;
+                            @include texthidden;
+                            &__title, &__note {
+                                @include texthidden;
+                            }
+                        }
+                        &__price {
+                            align-self: flex-end;
+                        }
+                    }
+                    &__check {
+                        display: none;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 0 1em 1em 0;
+                        min-width: 3.5em;
+                        color: $colour-white;
+                        background-color: $colour-accent;
+                    }
                 }
             }
         }

@@ -23,6 +23,13 @@
     }
 }
 
+@mixin container-base {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 3em 1em 4em 1em;
+}
+
 @mixin noselect {
     -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
@@ -53,4 +60,14 @@
     @media screen and (min-width: map-get($breakpoints, desktop)){
         @content;
     }
+}
+@mixin container-max-width($max-width: 1600px) {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+@mixin texthidden {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

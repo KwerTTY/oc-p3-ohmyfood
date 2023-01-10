@@ -44,15 +44,20 @@ h6 {
     font-weight: 500;
     font-size: 0.95em;
 }
-.restaurant__card__new {
+
+.restaurant__container__cards__item__new {
     font-size: 0.9em;
 }
-.howto__wrapper__item__number {
-    font-size: 0.9em;
+
+.howto__container__cards__item {
+    &__number {
+        font-size: 0.9em;
+    }
+    &__text {
+        font-weight: 500;
+    }
 }
-.howto__wrapper__item__text {
-    font-weight: 500;
-}
+
 .like {
     font-size: 1.5em;
 }
@@ -60,12 +65,12 @@ h6 {
     font-size: 1.3em;
 }
 
-.restmenu__container__part__item {
-    &__text__title {
+.card {
+    &__title {
         font-weight: 500;
         font-size: 1.07em;
     }
-    &__text__note {
+    &__note {
         font-weight: 300;
         font-size: 0.9em;
     }

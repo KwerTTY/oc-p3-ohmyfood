@@ -105,15 +105,14 @@ h6 {
   font-size: 0.95em;
 }
 
-.restaurant__card__new {
+.restaurant__container__cards__item__new {
   font-size: 0.9em;
 }
 
-.howto__wrapper__item__number {
+.howto__container__cards__item__number {
   font-size: 0.9em;
 }
-
-.howto__wrapper__item__text {
+.howto__container__cards__item__text {
   font-weight: 500;
 }
 
@@ -125,15 +124,15 @@ h6 {
   font-size: 1.3em;
 }
 
-.restmenu__container__part__item__text__title {
+.card__title {
   font-weight: 500;
   font-size: 1.07em;
 }
-.restmenu__container__part__item__text__note {
+.card__note {
   font-weight: 300;
   font-size: 0.9em;
 }
-.restmenu__container__part__item__price {
+.card__price {
   font-weight: 500;
   font-size: 0.9em;
 }
@@ -304,14 +303,22 @@ main {
 }
 
 .footer {
-  padding: 1.5em 1.5em 2em 1.5em;
   background-color: #333333;
+}
+.footer__container {
+  padding: 1.5em 1.5em 2em 1.5em;
   color: #fff;
 }
-.footer__title {
+@media screen and (min-width: 1000px) {
+  .footer__container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+.footer__container__title {
   padding-bottom: 1em;
 }
-.footer__list {
+.footer__container__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -321,13 +328,13 @@ main {
           flex-direction: column;
   gap: 0.5em;
 }
-.footer__list__item a {
+.footer__container__list__item a {
   color: #fff;
 }
-.footer__list__item a:hover {
+.footer__container__list__item a:hover {
   color: #99E2D0;
 }
-.footer__list__item i {
+.footer__container__list__item i {
   width: 1.8em;
 }
 
@@ -395,10 +402,14 @@ main {
 @media screen and (min-width: 600px) and (max-width: 999px) {
   .infobox {
     background-color: #fff;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 34%;
+            flex: 1 0 34%;
+    border-right: 3px solid #f2f2f2;
   }
 }
 
-.howto {
+.howto__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -409,7 +420,13 @@ main {
   gap: 1.5em;
   padding: 3em 1em 4em 1em;
 }
-.howto__wrapper {
+@media screen and (min-width: 1000px) {
+  .howto__container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+.howto__container__cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -423,7 +440,16 @@ main {
   gap: 1.2em;
   margin-left: 0.6em;
 }
-.howto__wrapper__item {
+@media screen and (min-width: 1000px) {
+  .howto__container__cards {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    margin-left: 0;
+  }
+}
+.howto__container__cards__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -440,7 +466,13 @@ main {
   -webkit-filter: drop-shadow(0 0 0.6em #cccccc);
           filter: drop-shadow(0 0 0.6em #cccccc);
 }
-.howto__wrapper__item__number {
+@media screen and (min-width: 1000px) {
+  .howto__container__cards__item {
+    width: 33%;
+    margin-left: 0.6em;
+  }
+}
+.howto__container__cards__item__number {
   position: absolute;
   left: -0.8em;
   display: -webkit-box;
@@ -458,42 +490,20 @@ main {
   color: #fff;
   background-color: #9356DC;
 }
-.howto__wrapper__item i {
+.howto__container__cards__item i {
   color: #999999;
 }
-.howto__wrapper__item:hover {
+.howto__container__cards__item:hover {
   background-color: #f2eafb;
   -webkit-filter: drop-shadow(0 0 0.6em #999999);
           filter: drop-shadow(0 0 0.6em #999999);
 }
-.howto__wrapper__item:hover i {
+.howto__container__cards__item:hover i {
   color: #9356DC;
-}
-@media screen and (min-width: 600px) and (max-width: 999px) {
-  .howto {
-    min-width: 20em;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .howto__wrapper {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    margin-left: 0;
-  }
-  .howto__wrapper__item {
-    width: 33%;
-    margin-left: 0.6em;
-  }
 }
 
 .restaurant {
   background-color: #f2f2f2;
-}
-.restaurant__title {
-  padding: 2em 1em 1em 1em;
 }
 .restaurant__container {
   display: -webkit-box;
@@ -503,10 +513,34 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1.3em;
-  padding: 0 1em 4em 1em;
+  gap: 1.5em;
+  padding: 3em 1em 4em 1em;
 }
-.restaurant__container__card {
+@media screen and (min-width: 1000px) {
+  .restaurant__container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+.restaurant__container__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5em;
+}
+@media screen and (min-width: 1000px) {
+  .restaurant__container__cards {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+}
+.restaurant__container__cards__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -519,18 +553,18 @@ main {
   -webkit-filter: drop-shadow(0 0 0.6em #cccccc);
           filter: drop-shadow(0 0 0.6em #cccccc);
 }
-.restaurant__container__card:hover {
+.restaurant__container__cards__item:hover {
   -webkit-filter: drop-shadow(0 0 0.6em #9356DC);
           filter: drop-shadow(0 0 0.6em #9356DC);
 }
 @media screen and (min-width: 1000px) {
-  .restaurant__container__card {
+  .restaurant__container__cards__item {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 34%;
             flex: 1 0 34%;
   }
 }
-.restaurant__container__card__new {
+.restaurant__container__cards__item__new {
   background-color: #99E2D0;
   color: #278870;
   position: absolute;
@@ -540,7 +574,7 @@ main {
   margin: 0.8em 0.8em 0 0;
   border-radius: 0.2em;
 }
-.restaurant__container__card__img {
+.restaurant__container__cards__item__img {
   width: 100%;
   height: 175px;
   -o-object-fit: cover;
@@ -549,7 +583,7 @@ main {
      object-position: 50% 60%;
   border-radius: 1em 1em 0 0;
 }
-.restaurant__container__card__footer {
+.restaurant__container__cards__item__footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -561,7 +595,7 @@ main {
           justify-content: space-between;
   padding: 1em;
 }
-.restaurant__container__card__footer__text {
+.restaurant__container__cards__item__footer__text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,30 +605,29 @@ main {
           flex-direction: column;
   gap: 0.3em;
 }
-.restaurant__container__card__footer__text__location {
+.restaurant__container__cards__item__footer__text__location {
   color: #666666;
 }
-@media screen and (min-width: 1000px) {
-  .restaurant__container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-  }
-}
 
-.restmenu__img {
+.restimg {
   height: 20em;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.restmenu__container {
+
+.restmenu {
   position: relative;
-  background-color: #f2f2f2;
   padding: 2em 1em 0 1em;
   margin-top: -4em;
+  background-color: #f2f2f2;
   border-radius: 2em 2em 0 0;
+}
+@media screen and (min-width: 1000px) {
+  .restmenu__container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
 }
 .restmenu__container__title {
   display: -webkit-box;
@@ -608,20 +641,33 @@ main {
           justify-content: space-between;
   padding-right: 1em;
 }
-.restmenu__container__part-title {
-  position: relative;
-  padding: 2em 0 0.5em 0;
+@media screen and (min-width: 600px) and (max-width: 999px) {
+  .restmenu__container__title {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    padding: 0;
+    gap: 1em;
+  }
 }
-.restmenu__container__part-title:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 2.5em;
-  border-bottom: 3px solid #99E2D0;
+@media screen and (min-width: 1000px) {
+  .restmenu__container__title {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    padding: 0;
+    gap: 1em;
+  }
 }
-.restmenu__container__part {
+@media screen and (min-width: 1000px) {
+  .restmenu__container__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1em;
+  }
+}
+.restmenu__container__menu__part {
   padding-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -631,20 +677,32 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1em;
+  min-width: 0;
 }
 @media screen and (min-width: 1000px) {
-  .restmenu__container__part {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
+  .restmenu__container__menu__part {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 26%;
+            flex: 1 0 26%;
   }
 }
-.restmenu__container__part__item {
+.restmenu__container__menu__part__title {
+  position: relative;
+  padding: 2em 0 0.5em 0;
+}
+.restmenu__container__menu__part__title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 2.5em;
+  border-bottom: 3px solid #99E2D0;
+}
+.restmenu__container__menu__part .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1em;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -654,16 +712,27 @@ main {
   -webkit-filter: drop-shadow(0 0 0.6em #cccccc);
           filter: drop-shadow(0 0 0.6em #cccccc);
 }
-.restmenu__container__part__item:hover {
+.restmenu__container__menu__part .card:hover {
   -webkit-filter: drop-shadow(0 0 0.6em #99E2D0);
           filter: drop-shadow(0 0 0.6em #99E2D0);
 }
-@media screen and (min-width: 1000px) {
-  .restmenu__container__part__item {
-    width: 25em;
-  }
+.restmenu__container__menu__part .card:hover .card__check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-.restmenu__container__part__item__text {
+.restmenu__container__menu__part .card__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.7em;
+  gap: 1em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 0;
+}
+.restmenu__container__menu__part .card__container__text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -672,38 +741,24 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.2em;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  padding: 0.7em 0 0.7em 0.7em;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
 }
-.restmenu__container__part__item__text__title, .restmenu__container__part__item__text__note {
+.restmenu__container__menu__part .card__container__text__title, .restmenu__container__menu__part .card__container__text__note {
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
 }
-.restmenu__container__part__item__price {
-  padding: 0.7em 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+.restmenu__container__menu__part .card__container__price {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
-.restmenu__container__part__item__check {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.restmenu__container__menu__part .card__check {
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
