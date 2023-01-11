@@ -6,7 +6,7 @@
 
 .restmenu {
     position: relative;
-    padding: 2em 1em 0 1em;
+    padding: 2em 1em 3em 1em;
     margin-top: -4em;
     background-color: soft-lightdark($colour-white);
     border-radius: 2em 2em 0 0;
@@ -35,6 +35,7 @@
 
         }
         &__menu {
+            padding-bottom: 3em;
 
             @include responsive-desktop {
                 display: flex;
@@ -42,7 +43,6 @@
             }
 
             &__part {
-                padding-top: 1em;
                 display: flex;
                 flex-direction: column;
                 gap: 1em;
@@ -110,10 +110,9 @@
                 }
             }
         }
-        &__cartlink {
-            padding: 2em 0;
-            display: flex;
-            justify-content: center;
+        &__tocart {
+            display: block;
+            margin: 0 auto;
         }
     }
     
