@@ -4,11 +4,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    // cursor: pointer;
 
-    @include responsive-desktop {
-        display: none;
-    }
+    // Cacher si barre de recherche active en desktop
+    // @include responsive-desktop {
+    //     display: none;
+    // }
     
     &__active {
         color: mid-lightdark($colour-black);

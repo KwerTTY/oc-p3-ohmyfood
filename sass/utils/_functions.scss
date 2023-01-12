@@ -19,3 +19,12 @@
         @return darken($colour, 40%);
     }
 }
+
+
+@function lightdark($colour, $percent) {
+    @if (lightness($colour) < 25%){
+        @return lighten($colour, $percent);
+    }@else{
+        @return darken($colour, $percent);
+    }
+}

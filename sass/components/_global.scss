@@ -3,11 +3,11 @@ a {
     color: $colour-black;
 }
 .btn {
-    @include btn
+    @include btn;
 }
 .noselect {
-    @include noselect
+    @include noselect;
 }
 .like {
-    @include like
+    @include like;
 }
