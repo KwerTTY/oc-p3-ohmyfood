@@ -2,6 +2,7 @@ header {
     position: fixed;
     top: 0;
     height: 4.25em;
+    min-width: 320px;
     width: 100%;
     z-index: 30;
 }
@@ -19,7 +20,11 @@ header {
     //     justify-content: space-between;
     //     padding: 0 3.5em;
     // }
-
+    
+    &__logo:hover {
+        animation: tilt-shaking 200ms;
+        animation-iteration-count: 2;
+    }
     &__searchbar {
         display: none;
 
@@ -51,6 +56,11 @@ header {
     }
     &__return {
         position: absolute;
-        left: 1em;
+        left: 1.5em;
+        transform: scale(1);
+        transition: transform 400ms;
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 }

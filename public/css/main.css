@@ -1,4 +1,92 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
+@-webkit-keyframes tilt-shaking {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes tilt-shaking {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes rotation-360 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotation-360 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset,
 legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -138,16 +226,6 @@ a {
   cursor: pointer;
   -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
           filter: drop-shadow(0 0 0.4em #cccccc);
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: -webkit-transform 400ms;
-  transition: -webkit-transform 400ms;
-  transition: transform 400ms;
-  transition: transform 400ms, -webkit-transform 400ms;
-}
-.btn:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 .btn--icon {
   padding: 0.6em;
@@ -183,6 +261,7 @@ header {
   position: fixed;
   top: 0;
   height: 4.25em;
+  min-width: 320px;
   width: 100%;
   z-index: 30;
 }
@@ -201,6 +280,12 @@ header {
           justify-content: center;
   -webkit-box-shadow: 0 0.4em 0.4em -0.4em rgba(0, 0, 0, 0.25);
           box-shadow: 0 0.4em 0.4em -0.4em rgba(0, 0, 0, 0.25);
+}
+.header__logo:hover {
+  -webkit-animation: tilt-shaking 200ms;
+          animation: tilt-shaking 200ms;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
 }
 .header__searchbar {
   display: none;
@@ -241,7 +326,17 @@ header {
 }
 .header__return {
   position: absolute;
-  left: 1em;
+  left: 1.5em;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+}
+.header__return:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 main {
@@ -643,6 +738,12 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+.restmenu__container__menu__part .card:hover .card__check i {
+  -webkit-animation: rotation-360 400ms;
+          animation: rotation-360 400ms;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
 }
 .restmenu__container__menu__part .card__container {
   display: -webkit-box;

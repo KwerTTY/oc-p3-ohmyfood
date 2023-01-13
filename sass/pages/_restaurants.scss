@@ -77,6 +77,10 @@
                         @include shadow(lighten($colour-accent, 50));
                         .card__check {
                             display: flex;
+                            i {
+                                animation: rotation-360 400ms;
+                                animation-iteration-count: 1;
+                            }
                         }
                     }
                     &__container {

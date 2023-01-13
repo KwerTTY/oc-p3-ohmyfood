@@ -2,14 +2,6 @@
     filter: drop-shadow(0 0 $size lightdark($intensity, $colour));
 }
 
-@mixin btnhover {
-    transform: scale(1);
-    transition: transform 400ms;
-    &:hover {
-        transform: scale(1.10);
-    }
-}
-
 @mixin btn {
     min-width: 170px;
     padding: 1em 1.5em;
@@ -19,7 +11,6 @@
     background: $btn-gradient;
     cursor: pointer;
     @include shadow;
-    @include btnhover;
     &--icon {
         padding: 0.6em;
         border-radius: 100%;
