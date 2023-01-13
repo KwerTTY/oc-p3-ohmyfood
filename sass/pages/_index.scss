@@ -1,5 +1,5 @@
 .location {
-    background-color: soft-lightdark($colour-grey);
+    background-color: lightdark(10);
     padding: 1em 0;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@
     // }
     
     &__active {
-        color: mid-lightdark($colour-black);
+        color: lightdark(20, $colour-black);
         padding-right: 1em;
         &__icon {
             padding-right: 0.8em;
@@ -27,7 +27,7 @@
 }
 
 .infobox {
-    background-color: soft-lightdark($colour-white);
+    background-color: lightdark(5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,14 +39,14 @@
         padding: 0 2.8em;
     }
     &__subtitle {
-        color: hard-lightdark($colour-black);
+        color: lightdark(40, $colour-black);
         padding: 0 2em 1em 2em;
     }
 
     @include responsive-tablet {
         background-color: $colour-white;
         flex: 1 0 34%;
-        border-right: 3px solid soft-lightdark($colour-white);
+        border-right: 3px solid lightdark(5);
     }
 
 }
@@ -80,7 +80,7 @@
                 border-radius: 1em;
                 padding: 1.5em 2em;
                 background-color: $colour-white;
-                cursor: pointer;
+                // cursor: pointer;
                 @include shadow;
 
                 @include responsive-desktop {
@@ -101,11 +101,11 @@
                     background-color: $colour-primary;
                 }
                 & i {
-                    color: hard-lightdark($colour-white);
+                    color: lightdark(40);
                 }
                 &:hover {
-                    background-color: lighten($colour-primary, 35%);
-                    @include shadow(hard-lightdark($colour-white));
+                    background-color: lightdark(35, $colour-primary);
+                    @include shadow(lightdark(20));
                     & i {
                         color: $colour-primary;
                     }
@@ -116,7 +116,7 @@
 }
 
 .restaurant {
-    background-color: soft-lightdark($colour-white);
+    background-color: lightdark(5);
     &__container {
         @include container-base;
         
@@ -140,7 +140,7 @@
                 background-color: $colour-white;
                 @include shadow;
                 &:hover{
-                    @include shadow($colour-primary);
+                    @include shadow($colour-primary, 10);
                 }
 
                 @include responsive-desktop {
@@ -149,7 +149,7 @@
 
                 &__new {
                     background-color: $colour-accent;
-                    color: hard-lightdark($colour-accent);
+                    color: lightdark(40, $colour-accent);
                     position: absolute;
                     align-self: flex-end;
                     padding: 0.4em 0.8em;
@@ -173,7 +173,7 @@
                         flex-direction: column;
                         gap: 0.3em;
                         &__location {
-                            color: hard-lightdark($colour-black);
+                            color: lightdark(40, $colour-black);
                         }
                     }
                 }

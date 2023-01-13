@@ -1,28 +1,5 @@
-@function soft-lightdark($colour) {
-    @if (lightness($colour) < 25%){
-        @return lighten($colour, 5%);
-    }@else{
-        @return darken($colour, 5%);
-    }
-}
-@function mid-lightdark($colour) {
-    @if (lightness($colour) < 25%){
-        @return lighten($colour, 20%);
-    }@else{
-        @return darken($colour, 20%);
-    }
-}
-@function hard-lightdark($colour) {
-    @if (lightness($colour) < 25%){
-        @return lighten($colour, 40%);
-    }@else{
-        @return darken($colour, 40%);
-    }
-}
-
-
-@function lightdark($colour, $percent) {
-    @if (lightness($colour) < 25%){
+@function lightdark($percent: 20, $colour: $colour-white, $condition: 65) {
+    @if (lightness($colour) < $condition){
         @return lighten($colour, $percent);
     }@else{
         @return darken($colour, $percent);

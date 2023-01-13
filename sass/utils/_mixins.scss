@@ -1,5 +1,5 @@
-@mixin shadow($colour:mid-lightdark($colour-white),$size:0.6em){
-    filter: drop-shadow(0 0 $size $colour);
+@mixin shadow($colour: $colour-white, $intensity: 20, $size: 0.4em){
+    filter: drop-shadow(0 0 $size lightdark($intensity, $colour));
 }
 
 @mixin btnhover {
@@ -27,7 +27,7 @@
         height: 2.5em;
     }
     &:hover{
-        @include shadow(lightdark($colour-white, 40%));
+        @include shadow(lightdark(10));
         background: $btn-gradient-lighten;
     }
 }
@@ -50,7 +50,7 @@
 }
 
 @mixin like {
-    color: hard-lightdark($colour-white);
+    color: lightdark(40);
     cursor: pointer;
     &:hover {
         color: $colour-primary;

@@ -34,17 +34,17 @@ header {
             justify-content: center;
             align-items: center;
             height: 100%;
-            color: hard-lightdark($colour-black);
+            color: lightdark(40, $colour-black);
         }
         &__input {
             width: 20em;
             border: none;
-            border-bottom: 1px solid mid-lightdark($colour-white);
+            border-bottom: 1px solid lightdark();
             padding: 0 1em;
             border-radius: 0.5em 0.5em 0 0;
             &:focus {
                 border-bottom: 1px solid $colour-primary;
-                background-color: lighten($colour-primary, 35%);
+                background-color: lightdark(35, $colour-primary);
                 outline: none;
             }
         }

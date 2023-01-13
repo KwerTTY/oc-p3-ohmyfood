@@ -50,44 +50,51 @@ body {
   width: 100%;
   min-width: 320px;
   margin: 0 auto;
+  cursor: default;
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 100%;
+}
+
+h1, h4, h5 {
+  font-family: "Shrikhand", cursive;
+}
+
+h2, h3 {
+  font-weight: 700;
+}
+
+.btn {
+  font-weight: 600;
+}
+
+h1, .howtotext, .font-small--500, .card__price, .card_title {
+  font-weight: 500;
+}
+
+h6, .infobox__subtitle, .card__note {
+  font-weight: 300;
+}
+
+h3, h4 {
+  font-size: 1.2em;
 }
 
 h1 {
-  font-family: "Shrikhand", cursive;
-  font-weight: 500;
   font-size: 2em;
 }
 
-h2 {
-  font-weight: 700;
+h2, .like {
   font-size: 1.5em;
 }
 
-h3 {
-  font-weight: 700;
-  font-size: 1.2em;
-}
-
-h4 {
-  font-family: "Shrikhand", cursive;
-  font-size: 1.2em;
-}
-
 h5 {
-  font-family: "Shrikhand", cursive;
   font-size: 1.6em;
 }
 
-h6 {
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.header i {
+.checkicon, .header i {
   font-size: 1.3em;
 }
 
@@ -96,50 +103,28 @@ h6 {
 }
 
 .infobox__subtitle {
-  font-weight: 300;
   font-size: 1.1em;
 }
 
 .btn {
-  font-weight: 600;
   font-size: 0.95em;
 }
 
-.restaurant__container__cards__item__new {
+.font-small--500, .card__price, .card__note {
   font-size: 0.9em;
-}
-
-.howto__container__cards__item__number {
-  font-size: 0.9em;
-}
-.howto__container__cards__item__text {
-  font-weight: 500;
-}
-
-.like {
-  font-size: 1.5em;
-}
-
-.fa-circle-check {
-  font-size: 1.3em;
 }
 
 .card__title {
-  font-weight: 500;
   font-size: 1.07em;
 }
-.card__note {
-  font-weight: 300;
-  font-size: 0.9em;
-}
-.card__price {
-  font-weight: 500;
-  font-size: 0.9em;
+
+h6 {
+  text-transform: uppercase;
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #000000;
 }
 
 .btn {
@@ -147,12 +132,12 @@ a {
   padding: 1em 1.5em;
   border-radius: 1.5em;
   border: none;
-  color: #fff;
+  color: #ffffff;
   background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 121, 218)), to(rgb(147, 86, 220)));
   background: linear-gradient(180deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
   cursor: pointer;
-  -webkit-filter: drop-shadow(0 0 0.6em #cccccc);
-          filter: drop-shadow(0 0 0.6em #cccccc);
+  -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
+          filter: drop-shadow(0 0 0.4em #cccccc);
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: -webkit-transform 400ms;
@@ -171,8 +156,8 @@ a {
   height: 2.5em;
 }
 .btn:hover {
-  -webkit-filter: drop-shadow(0 0 0.6em #999999);
-          filter: drop-shadow(0 0 0.6em #999999);
+  -webkit-filter: drop-shadow(0 0 0.4em #b3b3b3);
+          filter: drop-shadow(0 0 0.4em #b3b3b3);
   background: -webkit-gradient(linear, left bottom, left top, from(#a366df), to(#ff88de));
   background: linear-gradient(360deg, #a366df 0%, #ff88de 100%);
 }
@@ -203,7 +188,7 @@ header {
 }
 
 .header {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 0 1.2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,7 +253,7 @@ main {
 }
 .footer__container {
   padding: 1.5em 1.5em 2em 1.5em;
-  color: #fff;
+  color: #ffffff;
 }
 @media screen and (min-width: 1000px) {
   .footer__container {
@@ -290,7 +275,7 @@ main {
   gap: 0.5em;
 }
 .footer__container__list__item a {
-  color: #fff;
+  color: #ffffff;
 }
 .footer__container__list__item a:hover {
   color: #99E2D0;
@@ -356,7 +341,7 @@ main {
 }
 @media screen and (min-width: 600px) and (max-width: 999px) {
   .infobox {
-    background-color: #fff;
+    background-color: #ffffff;
     -webkit-box-flex: 1;
         -ms-flex: 1 0 34%;
             flex: 1 0 34%;
@@ -416,10 +401,9 @@ main {
   width: 100%;
   border-radius: 1em;
   padding: 1.5em 2em;
-  background-color: #fff;
-  cursor: pointer;
-  -webkit-filter: drop-shadow(0 0 0.6em #cccccc);
-          filter: drop-shadow(0 0 0.6em #cccccc);
+  background-color: #ffffff;
+  -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
+          filter: drop-shadow(0 0 0.4em #cccccc);
 }
 @media screen and (min-width: 1000px) {
   .howto__container__cards__item {
@@ -442,7 +426,7 @@ main {
   min-width: 24px;
   height: 24px;
   border-radius: 100%;
-  color: #fff;
+  color: #ffffff;
   background-color: #9356DC;
 }
 .howto__container__cards__item i {
@@ -450,8 +434,8 @@ main {
 }
 .howto__container__cards__item:hover {
   background-color: #f2eafb;
-  -webkit-filter: drop-shadow(0 0 0.6em #999999);
-          filter: drop-shadow(0 0 0.6em #999999);
+  -webkit-filter: drop-shadow(0 0 0.4em #999999);
+          filter: drop-shadow(0 0 0.4em #999999);
 }
 .howto__container__cards__item:hover i {
   color: #9356DC;
@@ -504,13 +488,13 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 1em;
-  background-color: #fff;
-  -webkit-filter: drop-shadow(0 0 0.6em #cccccc);
-          filter: drop-shadow(0 0 0.6em #cccccc);
+  background-color: #ffffff;
+  -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
+          filter: drop-shadow(0 0 0.4em #cccccc);
 }
 .restaurant__container__cards__item:hover {
-  -webkit-filter: drop-shadow(0 0 0.6em #9356DC);
-          filter: drop-shadow(0 0 0.6em #9356DC);
+  -webkit-filter: drop-shadow(0 0 0.4em #ae80e5);
+          filter: drop-shadow(0 0 0.4em #ae80e5);
 }
 @media screen and (min-width: 1000px) {
   .restaurant__container__cards__item {
@@ -646,14 +630,14 @@ main {
       -ms-flex-align: stretch;
           align-items: stretch;
   border-radius: 1em;
-  background-color: #fff;
+  background-color: #ffffff;
   cursor: pointer;
-  -webkit-filter: drop-shadow(0 0 0.6em #cccccc);
-          filter: drop-shadow(0 0 0.6em #cccccc);
+  -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
+          filter: drop-shadow(0 0 0.4em #cccccc);
 }
 .restmenu__container__menu__part .card:hover {
-  -webkit-filter: drop-shadow(0 0 0.6em #99E2D0);
-          filter: drop-shadow(0 0 0.6em #99E2D0);
+  -webkit-filter: drop-shadow(0 0 0.4em #b0e8da);
+          filter: drop-shadow(0 0 0.4em #b0e8da);
 }
 .restmenu__container__menu__part .card:hover .card__check {
   display: -webkit-box;
@@ -706,7 +690,7 @@ main {
           justify-content: center;
   border-radius: 0 1em 1em 0;
   min-width: 3.5em;
-  color: #fff;
+  color: #ffffff;
   background-color: #99E2D0;
 }
 .restmenu__container__tocart {
