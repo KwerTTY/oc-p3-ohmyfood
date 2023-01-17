@@ -13,3 +13,20 @@
     75% { transform: rotate(270deg); }
     100% { transform: rotate(360deg); }
 }
+
+@keyframes circle-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fade-out {
+    100% { 
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes menupart-fadein {
+    0% { opacity: 0%; transform: scale(0.3); }
+    100% { opacity: 100%; transform: scale(1); }
+}

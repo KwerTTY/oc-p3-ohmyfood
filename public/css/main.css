@@ -87,6 +87,62 @@
             transform: rotate(360deg);
   }
 }
+@-webkit-keyframes circle-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes circle-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes fade-out {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes menupart-fadein {
+  0% {
+    opacity: 0%;
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes menupart-fadein {
+  0% {
+    opacity: 0%;
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset,
 legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -221,11 +277,16 @@ a {
   border-radius: 1.5em;
   border: none;
   color: #ffffff;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 121, 218)), to(rgb(147, 86, 220)));
-  background: linear-gradient(180deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
   cursor: pointer;
+  background-color: #FF79DA;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#9356DC));
+  background-image: linear-gradient(transparent, #9356DC);
   -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
           filter: drop-shadow(0 0 0.4em #cccccc);
+  -webkit-transition: background-color 300ms 200ms, -webkit-filter 500ms;
+  transition: background-color 300ms 200ms, -webkit-filter 500ms;
+  transition: filter 500ms, background-color 300ms 200ms;
+  transition: filter 500ms, background-color 300ms 200ms, -webkit-filter 500ms;
 }
 .btn--icon {
   padding: 0.6em;
@@ -234,10 +295,9 @@ a {
   height: 2.5em;
 }
 .btn:hover {
-  -webkit-filter: drop-shadow(0 0 0.4em #b3b3b3);
-          filter: drop-shadow(0 0 0.4em #b3b3b3);
-  background: -webkit-gradient(linear, left bottom, left top, from(#a366df), to(#ff88de));
-  background: linear-gradient(360deg, #a366df 0%, #ff88de 100%);
+  -webkit-filter: drop-shadow(0 0 0.4em #999999);
+          filter: drop-shadow(0 0 0.4em #999999);
+  background-color: #fface8;
 }
 
 .noselect {
@@ -250,11 +310,41 @@ a {
 }
 
 .like {
-  color: #999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
 }
-.like:hover {
+.like--empty {
+  opacity: 1;
+  color: #999999;
+  -webkit-transition: opacity 1500ms ease-in-out;
+  transition: opacity 1500ms ease-in-out;
+}
+.like--full {
+  opacity: 0;
+  position: absolute;
   color: #9356DC;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: opacity 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  transition: opacity 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+.like:hover :nth-child(1) {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.like:hover :nth-child(2) {
+  opacity: 0;
 }
 
 header {
@@ -379,6 +469,33 @@ main {
   width: 1.8em;
 }
 
+.index-loader {
+  position: fixed;
+  z-index: 999;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.7450980392);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: fade-out 3s cubic-bezier(0.7, 0, 0.9, 0.9) both;
+          animation: fade-out 3s cubic-bezier(0.7, 0, 0.9, 0.9) both;
+}
+.index-loader::after {
+  position: absolute;
+  z-index: 1000;
+  content: "";
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  border: 20px solid #9356DC;
+  border-radius: 100%;
+  border-top: 20px solid #FF79DA;
+  width: 200px;
+  height: 200px;
+  -webkit-animation: circle-spin 2s linear infinite;
+          animation: circle-spin 2s linear infinite;
+}
+
 .location {
   background-color: #e6e6e6;
   padding: 1em 0;
@@ -499,6 +616,8 @@ main {
   background-color: #ffffff;
   -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
           filter: drop-shadow(0 0 0.4em #cccccc);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
 }
 @media screen and (min-width: 1000px) {
   .howto__container__cards__item {
@@ -526,6 +645,8 @@ main {
 }
 .howto__container__cards__item i {
   color: #999999;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
 }
 .howto__container__cards__item:hover {
   background-color: #f2eafb;
@@ -586,6 +707,8 @@ main {
   background-color: #ffffff;
   -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
           filter: drop-shadow(0 0 0.4em #cccccc);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
 }
 .restaurant__container__cards__item:hover {
   -webkit-filter: drop-shadow(0 0 0.4em #ae80e5);
@@ -678,6 +801,18 @@ main {
 .restmenu__container__menu {
   padding-bottom: 3em;
 }
+.restmenu__container__menu :nth-child(1) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+.restmenu__container__menu :nth-child(2) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+.restmenu__container__menu :nth-child(3) {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
 @media screen and (min-width: 1000px) {
   .restmenu__container__menu {
     display: -webkit-box;
@@ -696,6 +831,8 @@ main {
           flex-direction: column;
   gap: 1em;
   min-width: 0;
+  -webkit-animation: menupart-fadein 1s cubic-bezier(0.7, 0, 0.9, 0.9) both;
+          animation: menupart-fadein 1s cubic-bezier(0.7, 0, 0.9, 0.9) both;
 }
 @media screen and (min-width: 1000px) {
   .restmenu__container__menu__part {
@@ -726,6 +863,7 @@ main {
           align-items: stretch;
   border-radius: 1em;
   background-color: #ffffff;
+  overflow: hidden;
   cursor: pointer;
   -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
           filter: drop-shadow(0 0 0.4em #cccccc);
@@ -735,13 +873,11 @@ main {
           filter: drop-shadow(0 0 0.4em #b0e8da);
 }
 .restmenu__container__menu__part .card:hover .card__check {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin-right: 0;
 }
 .restmenu__container__menu__part .card:hover .card__check i {
-  -webkit-animation: rotation-360 400ms;
-          animation: rotation-360 400ms;
+  -webkit-animation: rotation-360 500ms;
+          animation: rotation-360 500ms;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
 }
@@ -782,7 +918,10 @@ main {
       align-self: flex-end;
 }
 .restmenu__container__menu__part .card__check {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: -3.5em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -793,6 +932,8 @@ main {
   min-width: 3.5em;
   color: #ffffff;
   background-color: #99E2D0;
+  -webkit-transition: margin-right 500ms ease-in-out;
+  transition: margin-right 500ms ease-in-out;
 }
 .restmenu__container__tocart {
   display: block;

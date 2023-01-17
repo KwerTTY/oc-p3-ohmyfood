@@ -38,6 +38,16 @@
         &__menu {
             padding-bottom: 3em;
 
+            :nth-child(1) {
+                animation-delay: 100ms;
+            }
+            :nth-child(2) {
+                animation-delay: 300ms;
+            }
+            :nth-child(3) {
+                animation-delay: 500ms;
+            }
+
             @include responsive-desktop {
                 display: flex;
                 gap: 1em;
@@ -52,6 +62,8 @@
                 @include responsive-desktop {
                     flex: 1 0 26%;
                 }
+
+                animation: menupart-fadein 1s cubic-bezier(0.7, 0, 0.9, 0.9) both;
 
                 &__title {
                     position: relative;
@@ -71,14 +83,15 @@
                     align-items: stretch;
                     border-radius: 1em;
                     background-color: $colour-white;
+                    overflow: hidden;
                     cursor: pointer;
                     @include shadow;
                     &:hover {
                         @include shadow(lighten($colour-accent, 50));
                         .card__check {
-                            display: flex;
+                            margin-right: 0;
                             i {
-                                animation: rotation-360 400ms;
+                                animation: rotation-360 500ms;
                                 animation-iteration-count: 1;
                             }
                         }
@@ -104,13 +117,15 @@
                         }
                     }
                     &__check {
-                        display: none;
+                        display: flex;
+                        margin-right: -3.5em;
                         align-items: center;
                         justify-content: center;
                         border-radius: 0 1em 1em 0;
                         min-width: 3.5em;
                         color: $colour-white;
                         background-color: $colour-accent;
+                        transition: margin-right 500ms ease-in-out;
                     }
                 }
             }
