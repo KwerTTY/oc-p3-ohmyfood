@@ -48,56 +48,12 @@
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-  25% {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-  }
-  50% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  75% {
-    -webkit-transform: rotate(270deg);
-            transform: rotate(270deg);
-  }
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
 }
 @keyframes rotation-360 {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  25% {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-  }
-  50% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  75% {
-    -webkit-transform: rotate(270deg);
-            transform: rotate(270deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes circle-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@keyframes circle-spin {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -492,8 +448,8 @@ main {
   border-top: 20px solid #FF79DA;
   width: 200px;
   height: 200px;
-  -webkit-animation: circle-spin 2s linear infinite;
-          animation: circle-spin 2s linear infinite;
+  -webkit-animation: rotation-360 2s linear infinite;
+          animation: rotation-360 2s linear infinite;
 }
 
 .location {
@@ -867,6 +823,10 @@ main {
   cursor: pointer;
   -webkit-filter: drop-shadow(0 0 0.4em #cccccc);
           filter: drop-shadow(0 0 0.4em #cccccc);
+  -webkit-transition: -webkit-filter 300ms;
+  transition: -webkit-filter 300ms;
+  transition: filter 300ms;
+  transition: filter 300ms, -webkit-filter 300ms;
 }
 .restmenu__container__menu__part .card:hover {
   -webkit-filter: drop-shadow(0 0 0.4em #b0e8da);
@@ -876,8 +836,8 @@ main {
   margin-right: 0;
 }
 .restmenu__container__menu__part .card:hover .card__check i {
-  -webkit-animation: rotation-360 500ms;
-          animation: rotation-360 500ms;
+  -webkit-animation: rotation-360 500ms 200ms;
+          animation: rotation-360 500ms 200ms;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
 }

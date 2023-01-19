@@ -86,12 +86,13 @@
                     overflow: hidden;
                     cursor: pointer;
                     @include shadow;
+                    transition: filter 300ms;
                     &:hover {
                         @include shadow(lighten($colour-accent, 50));
                         .card__check {
                             margin-right: 0;
                             i {
-                                animation: rotation-360 500ms;
+                                animation: rotation-360 500ms 200ms;
                                 animation-iteration-count: 1;
                             }
                         }
