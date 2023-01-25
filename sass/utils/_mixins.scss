@@ -54,14 +54,14 @@
     &--empty {
         opacity: 1;
         color: lightdark(40);
-        transition: opacity 1500ms ease-in-out;
+        transition: opacity 1500ms;
     }
     &--full {
         opacity: 0;
         position: absolute;
         color: $colour-primary;
         transform: scale(0);
-        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        transition: opacity 1s, transform 1s;
     }
     &:hover {
         :nth-child(1) {
